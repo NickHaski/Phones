@@ -1,0 +1,5 @@
+Improvements:
+1. Need to add: Microservice for SQL migration scripts
+2. Need to add: ErrorHandling for bot microservices
+3. Need to add: add Queue to Order microservice to avoid overFlowing
+4. Added user registration microservice to have history of clients
