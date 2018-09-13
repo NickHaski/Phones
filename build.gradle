@@ -1,6 +1,8 @@
 group 'com.phones'
 version '1.0-SNAPSHOT'
 
+profile = project.hasProperty('profile') ? project.property('profile') : "local"
+
 apply plugin: "idea"
 apply plugin: 'java'
 apply plugin: 'org.springframework.boot'
@@ -43,6 +45,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
     compile('org.springframework.boot:spring-boot-starter-data-jpa')
 
+    compile('javax.xml.bind:jaxb-api:2.3.0')
     compile group: 'org.apache.commons', name: 'commons-lang3', version: '3.7'
     compile group: 'commons-io', name: 'commons-io', version: '2.6'
     compile("commons-io:commons-io")
@@ -50,6 +53,7 @@ dependencies {
     compile('org.flywaydb:flyway-core:5.1.4')
     runtime('mysql:mysql-connector-java:8.0.11')
 
+    compile("org.testcontainers:testcontainers:${testContainersVersion}")
     testCompile("org.springframework.boot:spring-boot-starter-test")
-    compileOnly("org.projectlombok:lombok")
+    compileOnly("org.projectlombok:lombok:1.18.2")
 }
